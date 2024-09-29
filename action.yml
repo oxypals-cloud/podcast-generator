@@ -1,4 +1,4 @@
-name: "Podcast Generator"
+name: "Oxypals Podcast Generator"
 author: "Maksym Chernomaz"
 description: "Generates fedd from YAML"
 runs:
