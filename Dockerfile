@@ -11,8 +11,10 @@ RUN python3 -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 RUN pip install PyYAML
 
-COPY feed.py /usr/bin/feed.py
+COPY feed.py /usr/local/bin/feed.py
 
-COPY entrypoint.sh ~/entrypoint.sh
+COPY entrypoint.sh /usr/local/bin/
 
-ENTRYPOINT [ "entrypoint.sh" ]
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
